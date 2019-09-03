@@ -1,0 +1,7 @@
+### modename freq resonance amp;
+
+mode1 1 0.99995 0.025;
+mode2 2.01 0.99991 0.015; 
+mode3 3.9 0.99992 0.015;
+mode4 14.37 0.9999 0.015;
+mode5 0 0.9996 0;

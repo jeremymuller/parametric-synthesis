@@ -1,0 +1,10 @@
+### modename freq resonance amp;
+
+mode1 1.0 0.999 0.06;
+mode2 4.08 0.999 0.05; 
+mode3 6.669 0.999 0.03;
+mode4 -3725 0.999 0.02;
+mode5 0 0.9996 0;
+
+### strike positions
+strikeposition

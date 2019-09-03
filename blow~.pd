@@ -1,0 +1,80 @@
+#N canvas 453 73 987 740 10;
+#X declare -path abs/;
+#X obj 369 378 pack f 20;
+#X obj 369 400 line~;
+#X obj 369 468 *~;
+#X obj 384 424 noise~;
+#X obj 384 446 *~ 0.2;
+#X obj 354 490 +~;
+#X floatatom 204 442 5 0 0 0 - - -;
+#X obj 204 461 mtof;
+#X obj 369 518 osc~ 5.735;
+#X obj 354 572 *~;
+#X obj 354 594 +~;
+#X obj 369 539 *~ 0.01;
+#X obj 354 622 tube;
+#X floatatom 447 516 5 0 0 0 - - -;
+#X obj 453 29 declare -path abs/;
+#X obj 113 219 hsl 128 15 0 127 0 0 empty \$0-position-rec POSITION
+0 8 0 10 -1 -262144 -262144 6400 1;
+#X obj 113 168 hsl 128 15 0 127 0 0 empty \$0-vel-rec VEL 0 8 0 10
+-1 -262144 -262144 6400 1;
+#X obj 176 113 cnv 15 5 5 empty empty BLOW 5 9 0 14 -262144 -1 0;
+#X obj 113 151 hsl 128 15 0 127 0 0 empty \$0-pitch-rec PITCH 0 8 0
+10 -1 -262144 -262144 6000 1;
+#X obj 245 151 nbx 3 15 0 127 0 0 empty empty empty 0 -8 0 10 -1 -262144
+-1 60 256;
+#X obj 100 100 cnv 5 25 10 empty empty PITCH 0 5 0 8 -1 -262144 0;
+#X obj 100 240 cnv 5 25 10 empty empty OUT 1 5 0 8 -1 -262144 0;
+#X obj 113 185 hsl 128 15 0 127 0 0 \$0-noise-send \$0-noise-rec NOISE
+0 8 0 10 -1 -262144 -262144 2600 1;
+#X obj 464 95 loadbang;
+#X obj 464 116 f \$0;
+#X obj 113 134 hsl 128 15 0 127 0 0 empty \$0-pressure-rec PRESSURE
+0 8 0 10 -1 -262144 -262144 6900 1;
+#X obj 369 354 / 127;
+#X obj 354 643 outlet~;
+#X obj 245 168 bng 32 250 50 0 empty empty RAND 4 16 0 10 -1 -262144
+-262144;
+#X obj 636 235 list prepend \$0;
+#X obj 636 214 randomizer 10 128 128 128 128 128;
+#X obj 245 202 bng 32 250 50 0 empty empty INIT 4 16 0 10 -1 -262144
+-262144;
+#X obj 440 402 r \$0-noise-send;
+#X msg 636 256 \; \$1-pitch-rec \$3 \; \$1-vel-rec \$4 \; \$1-noise-rec
+\$5 \;;
+#X obj 113 202 hsl 128 15 0 127 0 0 \$0-slope-send \$0-slope-rec REED
+0 8 0 10 -1 -262144 -262144 6900 1;
+#X obj 440 423 * 0.0078125;
+#X text 518 422 < (1/128);
+#X msg 464 137 \; \$1-pitch-rec 60 \; \$1-vel-rec 64 \; \$1-noise-rec
+26 \; \$1-position-rec 64 \; \$1-slope-rec 69 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 9 0;
+#X connect 5 0 10 1;
+#X connect 6 0 7 0;
+#X connect 7 0 12 1;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 1;
+#X connect 12 0 27 0;
+#X connect 13 0 11 1;
+#X connect 18 0 19 0;
+#X connect 18 0 6 0;
+#X connect 23 0 24 0;
+#X connect 24 0 37 0;
+#X connect 25 0 26 0;
+#X connect 26 0 0 0;
+#X connect 28 0 30 0;
+#X connect 29 0 33 0;
+#X connect 30 0 29 0;
+#X connect 31 0 24 0;
+#X connect 32 0 35 0;
+#X connect 35 0 4 1;
+#X coords 0 -1 1 1 200 150 2 100 100;

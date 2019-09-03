@@ -1,0 +1,200 @@
+#N canvas 417 105 783 537 10;
+#X declare -path presets/;
+#X declare -path abs/;
+#X obj 113 219 hsl 128 15 0 127 0 0 \$0-position-send \$0-position-rec
+POSITION 0 8 0 10 -1 -262144 -262144 6400 1;
+#X obj 113 168 hsl 128 15 0 127 0 0 empty \$0-vel-rec VEL 0 8 0 10
+-1 -262144 -262144 6400 1;
+#X obj 102 112 bng 15 50 50 0 empty empty empty 17 7 0 10 -1 -228856
+-1;
+#X obj 31 496 outlet~;
+#X obj 176 113 cnv 15 5 5 empty empty MODAL 5 9 0 14 -262144 -1 0;
+#X obj 113 151 hsl 128 15 0 127 0 0 empty \$0-pitch-rec PITCH 0 8 0
+10 -1 -262144 -262144 6000 1;
+#X obj 245 151 nbx 3 15 0 127 0 0 empty empty empty 0 -8 0 10 -1 -262144
+-1 60 256;
+#X obj 23 42 threshold~ 0.9 0 0.9 0;
+#X obj 23 21 inlet~;
+#X obj 110 134 hradio 15 1 0 9 \$0-presets-send \$0-presets-rec PRESETS
+1 8 0 10 -1 -262144 -262144 3;
+#N canvas 77 72 1003 700 presets 0;
+#X obj 42 347 qlist;
+#X floatatom 48 66 5 0 0 0 - - -;
+#X msg 48 107 vibraphone;
+#X msg 78 167 coffeemug;
+#X obj 42 256 symbol;
+#X obj 42 277 makefilename %s.txt;
+#X msg 42 298 read \$1 \, bang;
+#X msg 58 127 marimba;
+#X msg 68 147 agogo;
+#X msg 128 107 wood1;
+#X msg 138 127 wood2;
+#X msg 148 147 reso;
+#X msg 158 167 marimba2;
+#X obj 375 46 r ###;
+#X obj 48 86 sel 0 1 2 3 4 5 6 7 8;
+#X msg 178 107 marimba3;
+#X obj 397 91 r \$0-presets-send;
+#X obj 397 132 route 0 1 2 3 4 5 6 7 8;
+#X obj 397 112 list append \$0;
+#X text 323 532 coffee mug;
+#X text 322 417 agogo;
+#X text 324 187 vibraphone;
+#X text 335 311 reso;
+#X text 563 183 marimba 1;
+#X text 573 287 marimba 2;
+#X text 569 401 marimba 3;
+#X text 539 521 wood 1;
+#X text 845 188 wood 2;
+#X msg 267 206 \; \$1-mode1 1 0.99995 0.025 \; \$1-mode2 2.01 0.99991
+0.015 \; \$1-mode3 3.9 0.99992 0.015 \; \$1-mode4 14.37 0.9999 0.015
+\; \$1-mode5 0 0.9996 0 \; \$1-position-rec 72 \;;
+#X msg 520 417 \; \$1-mode1 -132 0.99998 0.04 \; \$1-mode2 -529 0.99996
+0.01 \; \$1-mode3 -1324 0.9996 0.01 \; \$1-mode4 -2461 0.9994 0.008
+\; \$1-mode5 -3937 0.999 0.008 \; \$1-position-rec 64 \;;
+#X msg 261 548 \; \$1-mode1 -2457 0.9998 0.109 \; \$1-mode2 -2609 0.9998
+0.196 \; \$1-mode3 -3752 0.9998 0.092 \; \$1-mode4 -5786 0.9996 0.036
+\; \$1-mode5 -9057 0.9996 0.044 \; \$1-position-rec 64 \;;
+#X msg 525 200 \; \$1-mode1 1 0.9996 0.04 \; \$1-mode2 3.99 0.9994
+0.01 \; \$1-mode3 10.65 0.9994 0.01 \; \$1-mode4 -2443 0.999 0.008
+\; \$1-mode5 0 0.9996 0 \; \$1-position-rec 57 \;;
+#X msg 271 435 \; \$1-mode1 1 0.999 0.06 \; \$1-mode2 4.08 0.999 0.05
+\; \$1-mode3 6.669 0.999 0.03 \; \$1-mode4 -3725 0.999 0.02 \; \$1-mode5
+0 0.9996 0 \; \$1-position-rec 46 \;;
+#X msg 505 541 \; \$1-mode1 1 0.996 0.04 \; \$1-mode2 2.777 0.994 0.01
+\; \$1-mode3 7.378 0.994 0.01 \; \$1-mode4 15.377 0.99 0.008 \; \$1-mode5
+0 0.9996 0 \; \$1-position-rec 48 \;;
+#X msg 260 327 \; \$1-mode1 1 0.99996 0.02 \; \$1-mode2 2.777 0.99994
+0.005 \; \$1-mode3 7.378 0.99994 0.005 \; \$1-mode4 15.377 0.9999 0.004
+\; \$1-mode5 0 0.9996 0 \; \$1-position-rec 32 \;;
+#X msg 812 217 \; \$1-mode1 1 0.996 0.04 \; \$1-mode2 1.777 0.994 0.01
+\; \$1-mode3 2.378 0.994 0.01 \; \$1-mode4 3.377 0.99 0.008 \; \$1-mode5
+0 0.9996 0 \; \$1-position-rec 57 \;;
+#X msg 522 301 \; \$1-mode1 1 0.9998 0.04 \; \$1-mode2 3.99 0.9996
+0.01 \; \$1-mode3 10.65 0.9996 0.01 \; \$1-mode4 -2443 0.9994 0.008
+\; \$1-mode5 9057 0 0 \; \$1-position-rec 64 \;;
+#X connect 1 0 14 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 14 0 2 0;
+#X connect 14 1 7 0;
+#X connect 14 2 8 0;
+#X connect 14 3 3 0;
+#X connect 14 4 9 0;
+#X connect 14 5 10 0;
+#X connect 14 6 11 0;
+#X connect 14 7 12 0;
+#X connect 14 8 15 0;
+#X connect 15 0 4 0;
+#X connect 16 0 18 0;
+#X connect 17 0 28 0;
+#X connect 17 1 34 0;
+#X connect 17 2 32 0;
+#X connect 17 3 30 0;
+#X connect 17 4 31 0;
+#X connect 17 5 36 0;
+#X connect 17 6 29 0;
+#X connect 17 7 33 0;
+#X connect 17 8 35 0;
+#X connect 18 0 17 0;
+#X restore 316 132 pd presets;
+#X obj 100 100 cnv 5 25 10 empty empty TRIG 1 5 0 8 -1 -262144 0;
+#X obj 265 100 cnv 5 25 10 empty empty PITCH 0 5 0 8 -1 -262144 0;
+#X obj 221 33 inlet~ pitch;
+#X obj 12 270 s \$0-pitch;
+#X obj 113 202 hsl 128 15 0 127 0 0 \$0-hardness-send \$0-hardness-rec
+HARDNESS 0 8 0 10 -1 -262144 -262144 6400 1;
+#X obj 589 28 declare -path presets/;
+#X obj 221 54 snapshot~;
+#X obj 23 63 t b b;
+#X obj 86 397 modalpoly~ \$0;
+#X obj 86 313 poly 4 1;
+#X obj 86 334 stripnote;
+#X obj 86 355 pack f f;
+#X obj 86 376 route 1 2 3 4;
+#X obj 96 417 modalpoly~ \$0;
+#X obj 106 437 modalpoly~ \$0;
+#X obj 116 457 modalpoly~ \$0;
+#X obj 240 288 s \$0-velocity;
+#X obj 221 75 s \$0-inlet-pitch;
+#X obj 86 271 r \$0-inlet-pitch;
+#X msg 86 292 \$1 1;
+#X obj 589 48 declare -path abs/;
+#X obj 100 240 cnv 5 25 10 empty empty OUT 1 5 0 8 -1 -262144 0;
+#X obj 113 185 hsl 128 15 0 127 0 0 \$0-mallet-send \$0-mallet-rec
+MALLET 0 8 0 10 -1 -262144 -262144 12700 1;
+#X obj 418 22 loadbang;
+#X obj 418 43 f \$0;
+#N canvas 333 440 631 395 residual 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-residual 22558 float 0;
+#X coords 0 1 22557 -1 100 100 1 0 0;
+#X restore 131 35 graph;
+#X obj 131 140 loadbang;
+#X obj 131 224 soundfiler;
+#X obj 131 245 / 44.1;
+#X floatatom 131 266 5 0 0 0 - - -;
+#X obj 131 161 f \$0;
+#X obj 131 182 makefilename %d-residual;
+#X msg 131 203 read -resize audio/chopstick.aiff \$1;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X restore 316 114 pd residual;
+#X obj 245 168 bng 32 250 50 0 empty empty RAND 4 16 0 10 -1 -262144
+-262144;
+#X obj 513 196 list prepend \$0;
+#X obj 513 175 randomizer 10 128 128 128 128 128;
+#X obj 245 202 bng 32 250 50 0 empty empty INIT 4 16 0 10 -1 -262144
+-262144;
+#X msg 513 217 \; \$1-presets-rec \$2 \; \$1-pitch-rec \$3 \; \$1-vel-rec
+\$4 \; \$1-mallet-rec \$5 \; \$1-hardness-rec \$6 \; \$1-position-rec
+\$7 \;;
+#X msg 418 64 \; \$1-presets-rec 3 \; \$1-pitch-rec 60 \; \$1-vel-rec
+64 \; \$1-mallet-rec 127 \; \$1-hardness-rec 64 \;;
+#X text 333 351 TODO: stick direct gain;
+#X text 344 367 TODO: do a slider for mallet instead of presets? like
+VCV rack;
+#X connect 1 0 27 0;
+#X connect 5 0 6 0;
+#X connect 5 0 14 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 13 0 17 0;
+#X connect 17 0 28 0;
+#X connect 18 0 2 0;
+#X connect 18 1 17 0;
+#X connect 19 0 3 0;
+#X connect 20 0 21 0;
+#X connect 20 1 22 1;
+#X connect 20 2 21 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 19 0;
+#X connect 23 1 24 0;
+#X connect 23 2 25 0;
+#X connect 23 3 26 0;
+#X connect 24 0 3 0;
+#X connect 25 0 3 0;
+#X connect 26 0 3 0;
+#X connect 29 0 30 0;
+#X connect 30 0 20 0;
+#X connect 34 0 35 0;
+#X connect 35 0 42 0;
+#X connect 37 0 39 0;
+#X connect 38 0 41 0;
+#X connect 39 0 38 0;
+#X connect 40 0 35 0;
+#X coords 0 -1 1 1 190 150 2 100 100;
