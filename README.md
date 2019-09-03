@@ -1,5 +1,6 @@
 # Parametric Synthesis
-##### Parametric synths in Pure Data based on Perry Cook &amp; Gary Scavone's Synthesis Toolkit ([STK](https://ccrma.stanford.edu/software/stk/)).
+
+Parametric synths in Pure Data based on Perry Cook &amp; Gary Scavone's Synthesis Toolkit ([STK](https://ccrma.stanford.edu/software/stk/)).
 
 There are two versions of the patches:
 1. As an abstraction to be used as an object in your patch.
