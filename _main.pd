@@ -1,22 +1,23 @@
-#N canvas 199 54 715 615 10;
-#X obj 105 128 noise~;
-#X obj 105 209 *~;
-#X obj 130 175 line~;
-#X msg 130 154 4 \, 0 1;
-#X obj 224 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 199 54 941 752 10;
+#X obj 291 174 noise~;
+#X obj 291 255 *~;
+#X obj 316 221 line~;
+#X msg 316 200 4 \, 0 1;
+#X obj 474 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 224 125 metro 200;
-#X obj 235 514 output~;
-#X obj 266 85 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 0;
-#X floatatom 263 105 5 0 0 0 - - -;
-#X obj 270 163 random 1000;
-#X obj 270 184 / 1000;
-#X obj 270 226 sig~;
-#X obj 270 205 * 0.2;
-#X obj 236 260 shake~;
-#X obj 249 431 rev3~ 85 90;
+#X obj 474 94 metro 200;
+#X obj 157 553 output~;
+#X obj 516 54 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4800 0;
+#X floatatom 513 74 5 0 0 0 - - -;
+#X obj 474 180 random 1000;
+#X obj 474 201 / 1000;
+#X obj 474 243 sig~;
+#X obj 474 222 * 0.2;
+#X obj 291 493 rev3~ 85 90;
+#X obj 291 287 pluck;
 #X connect 0 0 1 0;
+#X connect 1 0 14 0;
 #X connect 2 0 1 1;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
@@ -26,11 +27,12 @@
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 10 0 12 0;
+#X connect 11 0 14 1;
 #X connect 12 0 11 0;
-#X connect 13 0 14 1;
-#X connect 13 0 14 0;
 #X connect 13 0 6 0;
-#X connect 13 0 6 1;
+#X connect 13 1 6 1;
+#X connect 14 0 13 0;
+#X connect 14 0 13 1;
 #X connect 14 0 6 0;
-#X connect 14 1 6 1;
-#X coords 0 615 1 614 200 100 0;
+#X connect 14 0 6 1;
+#X coords 0 752 1 751 200 100 0;
