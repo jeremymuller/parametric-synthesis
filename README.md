@@ -15,6 +15,6 @@ _bow velocity_ = anything above 64 is one bowing direction while anything below 
 
 * modal~ inlets:
 
-* pluck~ inlets: bang/pitch/'double' string/'single' string, velocity, pick sound, position, dampening
+* pluck~ inlets: `bang`/pitch/`double` string/`single` string, velocity, pick sound, position, dampening
 
 * shake~ inlets:
