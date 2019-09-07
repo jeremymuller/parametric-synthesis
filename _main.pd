@@ -16,16 +16,25 @@
 #X obj 474 222 * 0.2;
 #X obj 291 493 rev3~ 85 90;
 #X obj 291 287 pluck;
-#X obj 531 592 output~;
+#X obj 531 632 output~;
 #X msg 535 468 init;
 #X obj 446 495 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 657 454 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 4800 1;
+#X obj 760 435 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10300 1;
 #X floatatom 446 631 5 0 0 0 - - -;
 #X msg 577 473 rand;
-#X floatatom 657 590 5 0 0 0 - - -;
-#X obj 547 538 blow~;
+#X floatatom 760 571 5 0 0 0 - - -;
+#X obj 547 608 pluck~, f 15;
+#X obj 621 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 636 488 double;
+#X msg 646 508 single;
+#X obj 628 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 628 369 metro 200;
+#X text 433 474 pitch;
+#X text 757 406 position;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 1;
@@ -49,8 +58,13 @@
 #X connect 17 0 19 0;
 #X connect 17 0 22 0;
 #X connect 18 0 21 0;
-#X connect 18 0 22 1;
+#X connect 18 0 22 3;
 #X connect 20 0 22 0;
 #X connect 22 0 15 0;
 #X connect 22 0 15 1;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
 #X coords 0 752 1 751 200 100 0;

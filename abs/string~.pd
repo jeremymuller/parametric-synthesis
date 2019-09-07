@@ -21,7 +21,7 @@
 #X obj 367 131 * -1;
 #X obj 367 89 * 0.2;
 #X obj 367 110 + 0.8;
-#X obj 367 47 r \$1-damp-send;
+#X obj 367 47 r \$1-damp-rec;
 #X connect 1 0 4 0;
 #X connect 3 0 1 0;
 #X connect 4 0 6 0;
