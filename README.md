@@ -8,10 +8,10 @@ There are two versions of the patches:
 
 **All inlets take input ranges from 0-127 in order to work nicely with MIDI.**
 
+* blow~ inlets:
+
 * bow~ inlets: pitch, _bow velocity_, bow pressure, bow position, noise  
 _bow velocity_ works like anything above 64 is one bowing direction while anything below 64 is the opposite direction.
-
-* blow~ inlets:
 
 * modal~ inlets:
 
