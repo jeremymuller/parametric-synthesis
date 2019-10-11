@@ -1,40 +1,51 @@
 #N canvas 337 23 941 752 10;
-#X obj 291 174 noise~;
-#X obj 291 255 *~;
-#X obj 316 221 line~;
-#X msg 316 200 4 \, 0 1;
-#X obj 474 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 291 183 noise~;
+#X obj 291 264 *~;
+#X obj 316 230 line~;
+#X msg 316 209 4 \, 0 1;
+#X obj 474 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 474 94 metro 200;
-#X obj 157 553 output~;
-#X obj 516 54 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 474 103 metro 200;
+#X obj 157 562 output~;
+#X obj 516 63 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 0;
-#X floatatom 513 74 5 0 0 0 - - -;
-#X obj 474 180 random 1000;
-#X obj 474 201 / 1000;
-#X obj 474 243 sig~;
-#X obj 474 222 * 0.2;
-#X obj 291 493 rev3~ 85 90;
-#X obj 291 287 pluck;
-#X obj 531 632 output~;
-#X msg 535 468 init;
-#X obj 446 495 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4800 1;
-#X obj 760 435 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10300 1;
-#X floatatom 446 631 5 0 0 0 - - -;
-#X msg 577 473 rand;
-#X floatatom 760 571 5 0 0 0 - - -;
-#X obj 547 608 pluck~, f 15;
-#X obj 621 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 513 83 5 0 0 0 - - -;
+#X obj 474 189 random 1000;
+#X obj 474 210 / 1000;
+#X obj 474 252 sig~;
+#X obj 474 231 * 0.2;
+#X obj 291 502 rev3~ 85 90;
+#X obj 291 296 pluck;
+#X obj 531 641 output~;
+#X msg 535 477 init;
+#X obj 446 504 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 760 444 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 446 640 5 0 0 0 - - -;
+#X msg 577 482 rand;
+#X floatatom 760 580 5 0 0 0 - - -;
+#X obj 547 617 pluck~, f 15;
+#X obj 621 458 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 636 488 double;
-#X msg 646 508 single;
-#X obj 628 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 636 497 double;
+#X msg 646 517 single;
+#X obj 628 358 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 628 369 metro 200;
-#X text 433 474 pitch;
-#X text 757 406 position;
+#X obj 628 378 metro 200;
+#X text 433 483 pitch;
+#X text 757 415 position;
+#X obj 68 92 modal~;
+#X obj 37 308 shake~;
+#X obj 37 329 output~;
+#X obj 597 120 shake;
+#X obj 597 275 output~;
+#X obj 758 8 noise~;
+#X obj 758 89 *~;
+#X obj 783 55 line~;
+#X msg 783 34 4 \, 0 1;
+#X floatatom 46 223 5 0 0 0 - - -;
+#X floatatom 100 257 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 1;
@@ -67,4 +78,14 @@
 #X connect 25 0 22 0;
 #X connect 26 0 27 0;
 #X connect 27 0 23 0;
+#X connect 31 0 32 0;
+#X connect 31 0 32 1;
+#X connect 33 0 34 0;
+#X connect 33 0 34 1;
+#X connect 35 0 36 0;
+#X connect 36 0 33 0;
+#X connect 37 0 36 1;
+#X connect 38 0 37 0;
+#X connect 39 0 31 0;
+#X connect 40 0 31 1;
 #X coords 0 752 1 751 200 100 0;
