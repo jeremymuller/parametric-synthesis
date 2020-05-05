@@ -21,7 +21,7 @@
 #X obj 446 504 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 760 444 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 8200 1;
 #X floatatom 446 640 5 0 0 0 - - -;
 #X msg 577 482 rand;
 #X floatatom 760 580 5 0 0 0 - - -;
@@ -46,6 +46,9 @@
 #X msg 783 34 4 \, 0 1;
 #X floatatom 46 223 5 0 0 0 - - -;
 #X floatatom 100 257 5 0 0 0 - - -;
+#X obj 844 476 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 844 612 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 1;
@@ -88,4 +91,6 @@
 #X connect 38 0 37 0;
 #X connect 39 0 31 0;
 #X connect 40 0 31 1;
+#X connect 41 0 42 0;
+#X connect 41 0 22 4;
 #X coords 0 752 1 751 200 100 0;
